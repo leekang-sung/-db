@@ -2,7 +2,7 @@ import streamlit as st
 import duckdb
 import os
 
-st.title("📱 24시간 꺼지지 않는 마당서점")
+st.title("마당서점 고객조회")
 
 # 1. DB 연결 (IP 주소 대신 파일을 사용합니다!)
 # GitHub에 'madang.duckdb' 파일을 꼭 같이 올려야 작동합니다.
