@@ -1,16 +1,7 @@
 import streamlit as st
 import duckdb
 import pandas as pd
-from pyngrok import ngrok
 
-ngrok_token = "35kSRQko55lmy9XEyGS6T4EVtwJ_6URLuPjCvauCPxaD8wbAw"
-try:
-    # 8501 포트를 인터넷에 엽니다
-    public_url = ngrok.connect(8501).public_url
-    print(f"Link: {public_url}") # 터미널에 주소 출력
-    st.success(f"휴대폰으로 접속하세요! 👉 {public_url}") # 화면에도 주소 출력
-except:
-    pass
 # 1. 화면 구성
 st.title("📱 DuckDB 마당서점 검색")
 name = st.text_input("고객명", "")  # 기본값을 빈 문자열로 설정
