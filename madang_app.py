@@ -2,7 +2,7 @@ import streamlit as st
 import duckdb
 import os
 
-st.title("📱 24시간 꺼지지 않는 마당서점")
+st.title(" 마당서점")
 
 # 1. 데이터베이스 연결
 if os.path.exists('madang.duckdb'):
@@ -21,14 +21,14 @@ if name:
     user_df = con.execute(sql_user).df()
 
     if user_df.empty:
-        st.warning(f"'{name}' 고객님을 찾을 수 없습니다.")
+        st.warning(f"{name} 고객님을 찾을 수 없습니다.")
     else:
         # 고객 정보가 있으면 화면에 출력
-        st.subheader(f"📋 '{name}'님 회원 정보")
+        st.subheader(f" {name}님 회원 정보")
         st.table(user_df)  # 표 형태로 깔끔하게 보여줍니다.
 
         # --- [두 번째 결과] 주문 내역 조회 (JOIN 사용) ---
-        st.subheader(f"📚 '{name}'님 구매 내역")
+        st.subheader(f"{name}님 구매 내역")
 
         sql_order = f"""
             SELECT b.bookname, o.orderdate, o.saleprice 
